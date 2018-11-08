@@ -4,17 +4,17 @@ from keras.layers import Dense, Activation, Dropout
 
 import loader
 
-NUM_EPOCHS = 20
+NUM_EPOCHS = 40
 TRAIN_BATCH_SIZE = 128
 TEST_BATCH_SIZE = 128
 
 (x_train, y_train),(x_test, y_test) = loader.load_data(sys.argv[1])
 
 model = Sequential()
-model.add(Dense(512, input_dim=500))
+model.add(Dense(5, input_dim=500))
 model.add(Activation('relu'))
 model.add(Dropout(0.2))
-model.add(Dense(10))
+model.add(Dense(2))
 model.add(Activation('softmax'))
 
 model.compile(optimizer='adam',
